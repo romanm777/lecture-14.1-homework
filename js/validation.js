@@ -1,7 +1,4 @@
-
-$.noConflict();
-
-$(document).ready(function() {
+jQuery(document).ready(function() {
   $("form[validate]").css({"display": "flex", "flex-direction": "column", "align-items": "center"});
   $("form[validate] :input").not("[type='submit']").css({"width": "200px", "margin-top": "10px"});
   $("form[validate] :input[type='submit']").css({"margin-top": "20px", "width": "100px"});
