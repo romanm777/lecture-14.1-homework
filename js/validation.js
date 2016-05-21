@@ -1,8 +1,9 @@
-jQuery(document).ready(function() {
+$(document).ready(function() {
   $("form[validate]").css({"display": "flex", "flex-direction": "column", "align-items": "center"});
   $("form[validate] :input").not("[type='submit']").css({"width": "200px", "margin-top": "10px"});
   $("form[validate] :input[type='submit']").css({"margin-top": "20px", "width": "100px"});
-  $("form[validate] :input").not("[type='submit']").attr("placeholder", "input here");
+
+  instertPlaceholders();
 
   $("form[validate]").submit(function(event){
      event.preventDefault();
@@ -16,6 +17,14 @@ jQuery(document).ready(function() {
      }
   });
 });
+
+function instertPlaceholders() {
+  var inputs = $("form[validate] :input").not(":submit");
+  for(var i = 0; i < inputs.size(); ++i) {
+    var name = $(inputs[i]).attr("name");
+    $(inputs[i]).attr("placeholder", name);
+  }
+}
 
 // Form validator object
 function FormValidator(inputs) {
