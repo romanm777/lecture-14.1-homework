@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lecture 14.1 (form validation)</title>
+
+    <link href="./css/runnable.css" rel="stylesheet" />
+    <!-- Load jQuery and the validate plugin -->
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <script src="./js/validation.js"></script>
+  </head>
+  <body>
+    <form validate>
+      <input name="name" value="" validate-required validate-minlength="5" validate-maxlength="30" />
+      <input name="email" value="" validate-required validate-email />
+      <input name="date" value="" validate-date />
+      <input name="ip" value="" validate-regexp="^\d+\.\d+\.\d+\.\d+$" />
+      <input type="submit" value="Send" />
+    </form>
+  </body>
+</html>
