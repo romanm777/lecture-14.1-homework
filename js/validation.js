@@ -1,5 +1,6 @@
 
-// When the browser is ready...
+$.noConflict();
+
 $(document).ready(function() {
   $("form[validate]").css({"display": "flex", "flex-direction": "column", "align-items": "center"});
   $("form[validate] :input").not("[type='submit']").css({"width": "200px", "margin-top": "10px"});
